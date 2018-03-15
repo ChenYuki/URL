@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/Program Files/Eclipse/JARs/httpcore-4.0.1_1.jar"/>
-	<classpathentry kind="lib" path="D:/Program Files/Eclipse/JARs/jsoup-1.8.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/Program Files/Eclipse/JARs/commons-codec-1.9.jar"/>
-	<classpathentry kind="lib" path="D:/Program Files/Eclipse/JARs/commons-io-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AHU/Documents/GitHub/URL/JARs/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AHU/Documents/GitHub/URL/JARs/commons-io-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AHU/Documents/GitHub/URL/JARs/httpcore-4.0.1_1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AHU/Documents/GitHub/URL/JARs/jsoup-1.8.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
