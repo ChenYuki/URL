@@ -11,7 +11,7 @@ public class FileUtil {
 	private static String path;
 	public FileUtil()
 	{
-		path="D:\\1.txt";
+		path="src\\Dataset\\1.txt";
 		
 	}
 	public static List<String> readFile()
