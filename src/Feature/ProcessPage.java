@@ -36,8 +36,11 @@ public class ProcessPage {
 			{
 				url=(String)it.next();
 				String urldomain=getUrlDomainName(url);
-				HttpHeaders httpheader=new HttpHeaders(url);
-				httpheader.getHeaders();
+				
+				HttpHeaders httpheader=new HttpHeaders();
+				int hopNumber = httpheader.getHeaders(url, 0);
+				System.out.println("重定向跳数为：" + hopNumber);
+				
 				doc=Jsoup.connect(url).get();
 				GetAallLinks links=new GetAallLinks();
 				linklist=links.getAllLink(doc,url);
