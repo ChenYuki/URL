@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.jsoup.helper.StringUtil;
+
 import java.util.Map.Entry;
 public class HttpHeaders {
 //	private  String htmlUrl;
@@ -34,10 +36,9 @@ public class HttpHeaders {
 				//获取httpHeader信息
 				int statusCode = httpURLConnection.getResponseCode();
 				String responseMessage = httpURLConnection.getResponseMessage();
-				String locationUrlString =  httpURLConnection.getHeaderField("Location");
 				System.out.println("Response Headers:");  
 		        System.out.println(" status: " + statusCode + " " + responseMessage);  
-//		        System.out.println("重定向的网址为：" + httpURLConnection.getURL());
+//		        System.out.println("重定向的网址为：" + httpURLConnection.getURL());//这个方法有点问题，不能取到重定向后的重定向网址
 //		        System.out.println(" content-encoding: " + httpURLConnection.getContentEncoding());  
 //		        System.out.println(" content-length : " + httpURLConnection.getContentLength());  
 //		        System.out.println(" content-type: " + httpURLConnection.getContentType());  
@@ -50,6 +51,8 @@ public class HttpHeaders {
 		        //判断状态码
 		        if (statusCode/100 == 3) {
 		        	//状态码为3xx，重定向
+					String locationUrlString = getRedirectionLocation(url, httpURLConnection);   
+//					httpURLConnection.getHeaderField("Location");
 					if (!locationUrlString.equals(htmlUrl)) {
 						//不同说明有location可用
 				        System.out.println("重定向的网址为：" + locationUrlString);
@@ -84,5 +87,21 @@ public class HttpHeaders {
 			return nowHopNumber;
 			}
 		}
+	}
+	
+	//取状态码为3xx时重定向地址
+	private static String getRedirectionLocation(URL originalUrl, HttpURLConnection httpURLConnection) {
+		String locationUrlString = null;
+		locationUrlString = httpURLConnection.getHeaderField("Location");
+        System.out.println("111111：" + locationUrlString);
+        if (StringUtil.isBlank(locationUrlString)) {
+        	//防止大小写有区分导致无法取到
+        	locationUrlString = httpURLConnection.getHeaderField("location");
+        }
+        if (!(locationUrlString.startsWith("http://") || locationUrlString.startsWith("https://"))) { 
+        	//补全URL
+        	locationUrlString = originalUrl.getProtocol() + "://" + originalUrl.getHost() + ":" + originalUrl.getPort() + locationUrlString;
+        }
+		return locationUrlString;
 	}
 }

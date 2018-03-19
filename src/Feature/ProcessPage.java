@@ -22,6 +22,10 @@ public class ProcessPage {
 	static List<String> setIframedirectUrl=new ArrayList<String>();
 	static ArrayList<String> linklist=new ArrayList();
 	static List<ArrayList> setwarningLink=new ArrayList<ArrayList>();
+	
+	//输出文件路径
+	public static final String outPath ="src\\Out";
+	
 	public static void processpage() throws Exception
 	{
 		FileUtil fileutil=new FileUtil();
@@ -30,8 +34,13 @@ public class ProcessPage {
 		Document doc=null;
 		Iterator it=URLList.iterator();
 		String url;
+		
+		//用于计数
+		int count = 0;
 		while(it.hasNext())
 		{
+			count++;
+			String docName = String.format("%04d", count);
 			try
 			{
 				url=(String)it.next();
@@ -42,6 +51,8 @@ public class ProcessPage {
 				System.out.println("重定向跳数为：" + hopNumber);
 				
 				doc=Jsoup.connect(url).get();
+				FileUtil.writeToFile(doc.toString(), outPath + "\\" + "Document " + docName + ".txt");
+				
 				GetAallLinks links=new GetAallLinks();
 				linklist=links.getAllLink(doc,url);
 				ArrayList<String> tempList = new ArrayList();
@@ -65,7 +76,8 @@ public class ProcessPage {
 				}
 				System.out.println("-----");
 				for (int i = 0; i< tempList.size();i++) {
-					System.out.println(tempList.get(i));
+					FileUtil.writeToFile(tempList.get(i), outPath + "\\" + "Domain " + docName + ".txt");
+//					System.out.println(tempList.get(i));
 				}
 				System.out.println("-----");
 				setwarningLink.add(tempList);
@@ -93,8 +105,6 @@ public class ProcessPage {
 				System.out.println(e1.getMessage().toString());
 			}
 		}
-		
-		
 	}
 	private static boolean checkIframeRedirections(Document doc, String url) 
 	{

