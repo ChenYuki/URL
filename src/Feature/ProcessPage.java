@@ -76,7 +76,8 @@ public class ProcessPage {
 				}
 				System.out.println("-----");
 				for (int i = 0; i< tempList.size();i++) {
-					FileUtil.writeToFile(tempList.get(i), outPath + "\\" + "Domain " + docName + ".txt");
+					String tempString = tempList.get(i);
+					FileUtil.writeToFile(tempString + "\n", outPath + "\\" + "Domain " + docName + ".txt");
 //					System.out.println(tempList.get(i));
 				}
 				System.out.println("-----");
@@ -241,7 +242,11 @@ public class ProcessPage {
 	}
 	public static String getUrlDomainName(String htmlurl)
 	{
-		
+		//论文版正则
+//		Pattern p = Pattern.compile("(http://)(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?",Pattern.CASE_INSENSITIVE);
+		//web版正则
+//		Pattern p = Pattern.compile("(?<=http://|\\.)[^.]*?\\.(com|cn|net|org|biz|info|cc|tv)",Pattern.CASE_INSENSITIVE);
+		//居银银版正则
 		Pattern p=Pattern.compile("[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62}|(:[0-9]{1,4}))+\\.?");
 		Matcher m=p.matcher(htmlurl);
 		if(m.find())

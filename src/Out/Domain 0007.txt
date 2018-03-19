@@ -1,1 +1,0 @@
-https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website_{$app['name']}&utm_content=footer_img
