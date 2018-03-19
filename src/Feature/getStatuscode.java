@@ -1,9 +1,7 @@
 package Feature;
-
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
-
 public class getStatuscode {
 	private  String htmlUrl;
 	private String code;
@@ -16,7 +14,6 @@ public class getStatuscode {
 		if(htmlUrl==null)
 		{
 			System.err.println("查询网址不能为空！");
-
 		}
 		try
 		{
@@ -24,8 +21,7 @@ public class getStatuscode {
 			 URLConnection rulConnection   = url.openConnection();
 			 HttpURLConnection httpUrlConnection  =  (HttpURLConnection) rulConnection;
 			 httpUrlConnection.connect();
-			 code = new Integer(httpUrlConnection.getResponseCode()).toString();
-			 
+			 code = new Integer(httpUrlConnection.getResponseCode()).toString();	 
 		}
 		catch(Exception e)
 		{
@@ -33,5 +29,4 @@ public class getStatuscode {
 		}
 		return code;
 	}
-
 }

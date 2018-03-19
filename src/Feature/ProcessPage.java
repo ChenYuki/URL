@@ -1,6 +1,9 @@
  package Feature;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,58 +21,99 @@ public class ProcessPage {
 	static List<String> setwarningJSRedirect =new ArrayList<String>();
 	static List<String> setIframedirectUrl=new ArrayList<String>();
 	static ArrayList<String> linklist=new ArrayList();
-	static List<String> setwarningLink=new ArrayList<String>();
-	public static void processpage()
+	static List<ArrayList> setwarningLink=new ArrayList<ArrayList>();
+	
+	//输出文件路径
+	public static final String outPath ="src\\Out";
+	
+	public static void processpage() throws Exception
 	{
 		FileUtil fileutil=new FileUtil();
 		List<String> URLList=new ArrayList<String>();
 		URLList=fileutil.readFile();
-	    Document doc=null;
+		Document doc=null;
 		Iterator it=URLList.iterator();
 		String url;
+		
+		//用于计数
+		int count = 0;
 		while(it.hasNext())
 		{
+			count++;
+			String docName = String.format("%04d", count);
 			try
 			{
 				url=(String)it.next();
 				String urldomain=getUrlDomainName(url);
-				HttpHeaders httpheader=new HttpHeaders(url);
-				httpheader.getHeaders();
-				doc = Jsoup.connect(url).get();
+				
+				HttpHeaders httpheader=new HttpHeaders();
+				int hopNumber = httpheader.getHeaders(url, 0);
+				System.out.println("重定向跳数为：" + hopNumber);
+				
+				doc=Jsoup.connect(url).get();
+				FileUtil.writeToFile(doc.toString(), outPath + "\\" + "Document " + docName + ".txt");
+				
 				GetAallLinks links=new GetAallLinks();
 				linklist=links.getAllLink(doc,url);
+				ArrayList<String> tempList = new ArrayList();
 				for(int i=0;i<linklist.size();i++)
 				{
 					String tempdomain=getUrlDomainName(linklist.get(i));
 					if(tempdomain!=null)
 					{
-						if(compareDomainName(tempdomain,urldomain))
+						if(tempdomain.contains(":"))
 						{
-							setwarningLink.add(linklist.get(i));
+							String []tempdomain1=tempdomain.split(":");
+							if(compareDomainName(tempdomain1[0],urldomain))
+								tempList.add(linklist.get(i));		
+						}
+						else
+							if(compareDomainName(tempdomain,urldomain))
+						{
+								tempList.add(linklist.get(i));
 						}		
 					}
 				}
-				checkJSRedirections(doc,url);
-				checkMetaRedirections(doc,url);
-				checkIframeRedirections(doc,url);
+				System.out.println("-----");
+				for (int i = 0; i< tempList.size();i++) {
+					String tempString = tempList.get(i);
+					FileUtil.writeToFile(tempString + "\n", outPath + "\\" + "Domain " + docName + ".txt");
+//					System.out.println(tempList.get(i));
+				}
+				System.out.println("-----");
+				setwarningLink.add(tempList);
+				if(checkJSRedirections(doc,url))
+				{
+					System.out.println("JSwarningFlag=1");
+				}
+				else
+					System.out.println("JSwarningFlag=0");
+				if(checkMetaRedirections(doc,url))
+				{
+					System.out.println("MetawarningFlag=1");
+				}
+				else
+					System.out.println("MetawarningFlag=0");
+				if(checkIframeRedirections(doc,url))
+				{
+					System.out.println("IframewarningFlag=1");
+				}
+				else
+					System.out.println("IframewarningFlag=0");
 				
-			}catch(IOException e)
+			}catch(Exception e1)
 			{
-				System.out.println(e.getMessage().toString());;
-			}catch(Exception e)
-			{
-				e.printStackTrace();
+				System.out.println(e1.getMessage().toString());
 			}
 		}
-		
 	}
 	private static boolean checkIframeRedirections(Document doc, String url) 
 	{
 		Elements Iframe=doc.select("iframe");
 		if(Iframe!=null)
 		{
-			String frameborder=Iframe.attr("frameborder");
-			if(frameborder!=null&&frameborder=="0")
+			String border=Iframe.attr("frameborder");
+			if(border!=null&&border=="0")
 			{
 				String src=Iframe.attr("src");
 				if(src!=null)
@@ -77,13 +121,13 @@ public class ProcessPage {
 					String domainName=getUrlDomainName(url);
 					if(domainName!=null)
 					{
-						String src_domainName=getUrlDomainName(src);
-						if(compareDomainName(src_domainName,domainName))
+						String src_domianName=getUrlDomainName(src);
+						if(compareDomainName(src_domianName,domainName))
 						{
 							setIframedirectUrl.add(src);
+							return true;
 						}	
-					}
-					
+					}	
 				}
 			}
 		}
@@ -141,6 +185,7 @@ public class ProcessPage {
 						if(compareDomainName(domainNameRedirect,domainName))
 						{
 							setwarningJSRedirect.add(redirectURL);
+							return true;
 						}
 					}
 					
@@ -185,6 +230,7 @@ public class ProcessPage {
 							 if((compareDomainName(http_equiv_url_domainName,domainName))&&(meta_refresh_time)<5)
 							 {
 								 setwarningMeta.add(http_equiv_url);
+								 return true;
 							 }	 
 						 } 
 						 
@@ -196,7 +242,11 @@ public class ProcessPage {
 	}
 	public static String getUrlDomainName(String htmlurl)
 	{
-		
+		//论文版正则
+//		Pattern p = Pattern.compile("(http://)(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?",Pattern.CASE_INSENSITIVE);
+		//web版正则
+//		Pattern p = Pattern.compile("(?<=http://|\\.)[^.]*?\\.(com|cn|net|org|biz|info|cc|tv)",Pattern.CASE_INSENSITIVE);
+		//居银银版正则
 		Pattern p=Pattern.compile("[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62}|(:[0-9]{1,4}))+\\.?");
 		Matcher m=p.matcher(htmlurl);
 		if(m.find())
@@ -213,6 +263,7 @@ public class ProcessPage {
 		}
 		return true;
 	}
+		
 	public ProcessPage()
 	{
 		System.out.println("------------开始读取网页-----------");
