@@ -214,6 +214,7 @@ public class ProcessPage {
 						 http_equiv=lvContentArray[1];
 						 meta_refresh=lvContentArray[0];
 						 int meta_refresh_time=0;
+						 //前4位为"url="
 						 String http_equiv_url=http_equiv.substring(4);
 						 String http_equiv_url_domainName=getUrlDomainName(http_equiv_url);
 						 if(http_equiv_url_domainName!=null)
@@ -233,7 +234,6 @@ public class ProcessPage {
 								 return true;
 							 }	 
 						 } 
-						 
 					 }
 				 }
 			 }
